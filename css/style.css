@@ -315,10 +315,15 @@ section > button {
   
   @media (prefers-color-scheme: dark) {
   
-  body {
-  background-color: black;
-  color: white;
-  }   
+    .nocturno {
+      --color-bar-primario: rgba(66, 65, 77, 1);
+      --color-bar-secundario: rgba(66, 65, 77, 1);
+      --color-bar-tercera: rgba(66, 65, 77, 1);
+      --color-enfasis:  #ff7900;
+      --color-fondo: rgb(43, 42, 51);
+      --color-texto: #fff;
+      --color-boton-letra:#fff;
+  }
   }
 
 
