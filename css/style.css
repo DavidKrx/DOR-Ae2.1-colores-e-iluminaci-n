@@ -1,50 +1,45 @@
 :root {
   --color-bar-primario: #2C6BA3;
-  --color-bar-secundario: #fff;
-  --color-bar-tercero: #fff;
+  --color-nav-aside: #fff;
+  --color-producto: #fff;
   --color-enfasis:  #ff7900;
   --color-fondo: #fff;
   --color-texto:#000000;
-  --color-boton-letra:#000000;
 }
 .diurno {
     --color-bar-primario: #2C6BA3;
-    --color-bar-secundario: #fff;
-    --color-bar-tercero: #fff;
+    --color-nav-aside: #fff;
+    --color-producto: #fff;
     --color-enfasis:  #ff7900;
     --color-fondo: #fff;
     --color-texto:#000000;
-    --color-boton-letra:#000000;
 }
 
 .nocturno {
     --color-bar-primario: rgba(66, 65, 77, 1);
-    --color-bar-secundario: rgba(66, 65, 77, 1);
-    --color-bar-tercero: rgba(66, 65, 77, 1);
+    --color-nav-aside: rgba(66, 65, 77, 1);
+    --color-producto: rgba(66, 65, 77, 1);
     --color-enfasis:  #ff7900;
     --color-fondo: rgb(43, 42, 51);
     --color-texto: #fff;
-    --color-boton-letra:#fff;
 }
 
 .diurno-alto {
     --color-bar-primario: #2C6BA3;
-    --color-bar-secundario: #43a7ff;
-    --color-bar-tercero: #43a7ff;
+    --color-nav-aside: #43a7ff;
+    --color-producto: #43a7ff;
     --color-enfasis:  #ff7900;
     --color-fondo: #fff;
     --color-texto:#242220;
-    --color-boton-letra:#242220;
 }
 
 .nocturno-alto {
     --color-bar-primario: #000000;
-    --color-bar-secundario: rgba(66, 65, 77, 1);
-    --color-bar-tercero: #000000;
+    --color-nav-aside: #000000;
+    --color-producto: rgba(66, 65, 77, 1);
     --color-enfasis:  #ff7900;
     --color-fondo: rgb(43, 42, 51);
     --color-texto: #fff;
-    --color-boton-letra:#fff;
 }
 
 * {
@@ -119,7 +114,7 @@ nav {
   /*Barra de navegacion de plataformas de juegos*/
   grid-area: nava;
   padding: 1rem;
-  background-color: var(--color-bar-tercero);
+  background-color: var(--color-nav-aside);
   color: var(--color-texto);
 }
 
@@ -139,7 +134,7 @@ aside {
   /*Aside*/
   grid-area: asid;
   padding: 1rem;
-  background-color: var(--color-bar-tercero);
+  background-color: var(--color-nav-aside);
   color: var(--color-texto);
 }
 
@@ -204,7 +199,7 @@ article {
   width: 100%;
   height: 100%;
   color: var(--color-texto);
-  background-color: var(--color-bar-secundario);
+  background-color: var(--color-producto);
 }
 
 article > section { /*Secciones del juego*/
@@ -252,7 +247,6 @@ article button {
 article button a {
   margin: 0.2rem;
   font-size: 1.8rem;
-  color: var(--color-boton-letra);
 }
 .visuales{
   display: flex;
@@ -265,7 +259,7 @@ article button a {
 .visuales h2 {
   align-self: flex-start;
 }
-.video {
+.videosImg {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -273,21 +267,23 @@ article button a {
   margin: 1rem;
   padding: 1rem;
 }
-.video > div{
+.videosImg > div{
 display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-columns:1fr;
 width: 100%;
 height: 100%;
-padding: 1rem;
 }
-.video > div >div{
+video {
+  max-width: 100%;
+  max-height: 100%;
+}
+.videosImg > div >div{
   margin: 0.2rem;
   padding: 0.2rem;
   }
 
 .price {
   font-family: "Courier New", Courier, monospace;
-  font-size: 1.1rem;
   font-weight: bold;
 }
 .platform{
@@ -386,24 +382,22 @@ button {
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bar-primario: rgba(66, 65, 77, 1);
-    --color-bar-secundario: rgba(66, 65, 77, 1);
-    --color-bar-tercero: rgba(66, 65, 77, 1);
+    --color-producto: rgba(66, 65, 77, 1);
+    --color-nav-aside: rgba(66, 65, 77, 1);
     --color-enfasis:  #ff7900;
     --color-fondo: rgb(43, 42, 51);
     --color-texto: #fff;
-    --color-boton-letra:#fff;
   }
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --color-bar-primario: #2C6BA3;
-    --color-bar-secundario: #fff;
-    --color-bar-tercero: #fff;
+    --color-producto: #fff;
+    --color-nav-aside: #fff;
     --color-enfasis:  #ff7900;
     --color-fondo: #fff;
     --color-texto:#000000;
-    --color-boton-letra:#000000;
 }
 }
 
@@ -443,6 +437,10 @@ button {
     display: flex;
     flex-direction: column;
   }
+  .videosImg > div{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    }
 
   footer {
     grid-area: foot;
@@ -517,6 +515,10 @@ button {
     grid-column: 1 / 3;
     font-family: "Courier New", Courier, monospace;
   }
+  .videosImg > div{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    }
 
   footer {
     grid-area: foot;
