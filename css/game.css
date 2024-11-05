@@ -1,17 +1,16 @@
 :root {
   --color-bar-primario: #2C6BA3;
   --color-bar-secundario: #fff;
-  --color-bar-tercera: #fff;
+  --color-bar-tercero: #fff;
   --color-enfasis:  #ff7900;
   --color-fondo: #fff;
   --color-texto:#000000;
   --color-boton-letra:#000000;
 }
-/*Juvenil*/
 .diurno {
     --color-bar-primario: #2C6BA3;
     --color-bar-secundario: #fff;
-    --color-bar-tercera: #fff;
+    --color-bar-tercero: #fff;
     --color-enfasis:  #ff7900;
     --color-fondo: #fff;
     --color-texto:#000000;
@@ -21,7 +20,7 @@
 .nocturno {
     --color-bar-primario: rgba(66, 65, 77, 1);
     --color-bar-secundario: rgba(66, 65, 77, 1);
-    --color-bar-tercera: rgba(66, 65, 77, 1);
+    --color-bar-tercero: rgba(66, 65, 77, 1);
     --color-enfasis:  #ff7900;
     --color-fondo: rgb(43, 42, 51);
     --color-texto: #fff;
@@ -31,7 +30,7 @@
 .diurno-alto {
     --color-bar-primario: #2C6BA3;
     --color-bar-secundario: #43a7ff;
-    --color-bar-tercera: #43a7ff;
+    --color-bar-tercero: #43a7ff;
     --color-enfasis:  #ff7900;
     --color-fondo: #fff;
     --color-texto:#242220;
@@ -41,7 +40,7 @@
 .nocturno-alto {
     --color-bar-primario: #000000;
     --color-bar-secundario: rgba(66, 65, 77, 1);
-    --color-bar-tercera: #000000;
+    --color-bar-tercero: #000000;
     --color-enfasis:  #ff7900;
     --color-fondo: rgb(43, 42, 51);
     --color-texto: #fff;
@@ -96,6 +95,7 @@ header span {
 
 header a {
   font-size: 1rem;
+  color: var(--color-enfasis);
 }
 
 header svg {
@@ -117,7 +117,7 @@ nav {
   /*Barra de navegacion de plataformas de juegos*/
   grid-area: nava;
   padding: 1rem;
-  background-color: var(--color-bar-tercera);
+  background-color: var(--color-bar-tercero);
   color: var(--color-texto);
 }
 
@@ -137,7 +137,7 @@ aside {
   /*Aside*/
   grid-area: asid;
   padding: 1rem;
-  background-color: var(--color-bar-tercera);
+  background-color: var(--color-bar-tercero);
   color: var(--color-texto);
 }
 
@@ -172,9 +172,27 @@ section {
   flex-direction: column;
   align-items: center;
 }
+/*Botones de diurno y nocturno*/
 .sectColores {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: #fff;
+}
+.diuBut {
+  background-color: #0092ff;
+  color: var(--color-general);
+}
+.nocBut {
+  background-color: rgba(66, 65, 77, 1);
+  color: var(--color-general);
+}
+.diuABut {
+  background-color: #ff6808;
+  color: var(--color-general);
+}
+.nocABut {
+  background-color: #120907;
+  color: var(--color-general);
 }
 .newSection div {
   display: flex;
@@ -237,9 +255,6 @@ article button {
 article button a {
   margin: 0.2rem;
   font-size: 1.8rem;
-  /*
-  color: var(--color-texto);
-  */
   color: var(--color-boton-letra);
 }
 .visuales{
@@ -287,24 +302,16 @@ padding: 1rem;
 .platform div{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem;
+  padding: 0.2rem;
 }
-
-
-.diuBut {
-  background-color: #0092ff;
-  color: var(--color-general);
-}
-.nocBut {
-  background-color: #120907;
-  color: var(--color-general);
-}
-.diuABut {
-  background-color: #ff6808;
-  color: var(--color-general);
-}
-.nocABut {
-  background-color: #b1783f;
-  color: var(--color-general);
+.platform div svg{
+  height: 1rem;
+  width:  1rem;
+  justify-content: center;
+  margin: 0.2rem;
 }
 
 footer {
@@ -360,7 +367,7 @@ a {
   text-decoration: none;
   font-size: 1rem;
   justify-content: center;
-  color: var(--color-letra);
+  color: var(--color-texto);
 }
 
 .copy svg {
@@ -380,23 +387,24 @@ button {
   :root {
     --color-bar-primario: rgba(66, 65, 77, 1);
     --color-bar-secundario: rgba(66, 65, 77, 1);
-    --color-bar-tercera: rgba(66, 65, 77, 1);
+    --color-bar-tercero: rgba(66, 65, 77, 1);
     --color-enfasis:  #ff7900;
     --color-fondo: rgb(43, 42, 51);
     --color-texto: #fff;
     --color-boton-letra:#fff;
   }
 }
+
 @media (prefers-color-scheme: light) {
   :root {
-      --color-bar-primario: #2C6BA3;
-      --color-bar-secundario: #fff;
-      --color-bar-tercera: #fff;
-      --color-enfasis:  #ff7900;
-      --color-fondo: #fff;
-      --color-texto:#000000;
-      --color-boton-letra:#000000;
-  }
+    --color-bar-primario: #2C6BA3;
+    --color-bar-secundario: #fff;
+    --color-bar-tercero: #fff;
+    --color-enfasis:  #ff7900;
+    --color-fondo: #fff;
+    --color-texto:#000000;
+    --color-boton-letra:#000000;
+}
 }
 
 /* Tablets y phablets  2 */
