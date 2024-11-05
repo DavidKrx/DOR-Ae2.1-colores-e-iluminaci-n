@@ -1,60 +1,50 @@
 :root {
-  --color-primario: #f8d637;
-  --color-secundario: #e6df6e; 
-  --color-bars: #001c9e; 
-  --color-productos: #604fd0;
-  --color-general:#dea1ff; 
-  --color-letra:#000000; 
-}
-/*Juvenil*/
-.juvenil{
-  --color-bar-primario: #0092ff;
-  --color-bar-secundario: #ff3fde;
-  --color-bar-tercera: #ffa670;
-  --color-enfasis:#ff7900;
-  --color-fondo: #b0ffff;
-  --color-texto:#000000;
-  --color-boton-letra:#000000;
-}
-
-.diurno {
   --color-bar-primario: #2C6BA3;
   --color-bar-secundario: #fff;
-  --color-bar-tercera: #fff;
-  --color-enfasis: #ff7900;
+  --color-bar-tercero: #fff;
+  --color-enfasis:  #ff7900;
   --color-fondo: #fff;
   --color-texto:#000000;
   --color-boton-letra:#000000;
+}
+.diurno {
+    --color-bar-primario: #2C6BA3;
+    --color-bar-secundario: #fff;
+    --color-bar-tercero: #fff;
+    --color-enfasis:  #ff7900;
+    --color-fondo: #fff;
+    --color-texto:#000000;
+    --color-boton-letra:#000000;
 }
 
 .nocturno {
-  --color-bar-primario: rgba(66, 65, 77, 1);
-  --color-bar-secundario: rgba(66, 65, 77, 1);
-  --color-bar-tercera: rgba(66, 65, 77, 1);
-  --color-enfasis:  #ff7900;
-  --color-fondo: rgb(43, 42, 51);
-  --color-texto: #fff;
-  --color-boton-letra:#fff;
+    --color-bar-primario: rgba(66, 65, 77, 1);
+    --color-bar-secundario: rgba(66, 65, 77, 1);
+    --color-bar-tercero: rgba(66, 65, 77, 1);
+    --color-enfasis:  #ff7900;
+    --color-fondo: rgb(43, 42, 51);
+    --color-texto: #fff;
+    --color-boton-letra:#fff;
 }
 
 .diurno-alto {
-  --color-bar-primario: #0088ff;
-  --color-bar-secundario: #0088ff;
-  --color-bar-tercera: #0088ff;
-  --color-enfasis:  #ff7900;
-  --color-fondo: #fff;
-  --color-texto:#ff7900;
-  --color-boton-letra:#0088ff;
+    --color-bar-primario: #2C6BA3;
+    --color-bar-secundario: #43a7ff;
+    --color-bar-tercero: #43a7ff;
+    --color-enfasis:  #ff7900;
+    --color-fondo: #fff;
+    --color-texto:#242220;
+    --color-boton-letra:#242220;
 }
 
 .nocturno-alto {
-  --color-bar-primario: #000000;
-  --color-bar-secundario: rgba(66, 65, 77, 1);
-  --color-bar-tercera: #000000;
-  --color-enfasis:  #ff6600;
-  --color-fondo: rgb(43, 42, 51);
-  --color-texto: #fff;
-  --color-boton-letra:#fff;
+    --color-bar-primario: #000000;
+    --color-bar-secundario: rgba(66, 65, 77, 1);
+    --color-bar-tercero: #000000;
+    --color-enfasis:  #ff7900;
+    --color-fondo: rgb(43, 42, 51);
+    --color-texto: #fff;
+    --color-boton-letra:#fff;
 }
 
 * {
@@ -70,7 +60,7 @@ html {
   overflow-x: hidden;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Arial, Helvetica, sans-serif;
 }
 body {
   /*Grip para la estructura de la página*/
@@ -82,7 +72,6 @@ body {
     "main"
     "foot";
 }
-
 
 header {
   /*Cabecera, separa los 3 objetos del header entre ellos **/
@@ -97,14 +86,18 @@ header {
 
 header span {
   /*Estilos del titulo de la página */
-  font-family: "Sixtyfour Convergence", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings: "BLED" 0, "SCAN" 0, "XELA" 0, "YELA" 0;
   font-size: 2.5rem;
+  font-family: "Danfo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+  "ELSH" 100;
 }
+
 header a {
   font-size: 1rem;
+  color: var(--color-enfasis);
 }
 
 header svg {
@@ -126,7 +119,7 @@ nav {
   /*Barra de navegacion de plataformas de juegos*/
   grid-area: nava;
   padding: 1rem;
-  background-color: var(--color-bar-tercera);
+  background-color: var(--color-bar-tercero);
   color: var(--color-texto);
 }
 
@@ -146,7 +139,7 @@ aside {
   /*Aside*/
   grid-area: asid;
   padding: 1rem;
-  background-color: var(--color-bar-tercera);
+  background-color: var(--color-bar-tercero);
   color: var(--color-texto);
 }
 
@@ -171,29 +164,36 @@ main {
 
 section {
   /*Contenedor de articulos*/
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.newSection {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.newSection div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+/*Botones de diurno y nocturno*/
+.sectColores {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  color: #fff;
 }
-section > h1 {
-  font-family: "Teko", sans-serif;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: var(--color-secundario);
+.diuBut {
+  background-color: #0092ff;
+  color: var(--color-general);
+}
+.nocBut {
+  background-color: rgba(66, 65, 77, 1);
+  color: var(--color-general);
+}
+.diuABut {
+  background-color: #ff6808;
+  color: var(--color-general);
+}
+.nocABut {
+  background-color: #120907;
+  color: var(--color-general);
 }
 
 article {
-  /*Producto*/
+  /*Juego*/
   display: flex;
   flex-direction: column;
   border: 1px solid black;
@@ -201,47 +201,117 @@ article {
   padding: 5px;
   align-items: center;
   margin: 1rem;
+  width: 100%;
+  height: 100%;
   color: var(--color-texto);
   background-color: var(--color-bar-secundario);
 }
-article > span {
-  font-size: 1.1rem;
+
+article > section { /*Secciones del juego*/
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 1rem;
+  padding: 1rem;
 }
-article > button {
+h1, h2 {
+  font-size: 2rem;
+  color: var(--color-enfasis);
+}
+
+.mainProduc {/*Contenido principal del juego*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.8rem;
+}
+.acercaDe {
+  margin-bottom: 1rem;
+}
+tbody {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+tr {
+  display: flex;
+  flex-direction: column;
+  margin: 0.2rem;
+}
+td {
+  margin-bottom: 1rem;
+}
+.creador td{
+  font-weight: bold;
+}
+
+article button {
   border: 1px solid black;
   border-radius: 12px;
   background-color: var(--color-enfasis);
 }
-article > button > a{
+article button a {
   margin: 0.2rem;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: var(--color-boton-letra);
 }
+.visuales{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 1rem;
+  padding: 1rem;
+}
+.visuales h2 {
+  align-self: flex-start;
+}
+.video {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 1rem;
+  padding: 1rem;
+}
+.video > div{
+display: grid;
+grid-template-columns: 1fr 1fr;
+width: 100%;
+height: 100%;
+padding: 1rem;
+}
+.video > div >div{
+  margin: 0.2rem;
+  padding: 0.2rem;
+  }
 
 .price {
   font-family: "Courier New", Courier, monospace;
   font-size: 1.1rem;
   font-weight: bold;
 }
-
-.juvBut {
-  background-color: #0092ff;
-  color: var(--color-general);
+.platform{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-.serBut {
-  background-color: #120907;
-  color: var(--color-general);
+.platform div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem;
+  padding: 0.2rem;
 }
-.dinBut {
-  background-color: #ff6808;
-  color: var(--color-general);
+.platform div svg{
+  height: 1rem;
+  width:  1rem;
+  justify-content: center;
+  margin: 0.2rem;
 }
-.tranBut {
-  background-color:  #b1783f;
-  color: var(--color-general);}
-.exBut {
-  background-color: #0092ff;
-  color: var(--color-general);
+button:hover{
+  background-color: rgb(255, 196, 0)
 }
 
 footer {
@@ -282,8 +352,8 @@ ul {
   margin-block: auto;
   list-style-type: none;
 }
-
 img {
+  align-self: center;
   height: 100%;
   width: 100%;
   border: 1px;
@@ -305,35 +375,40 @@ a {
   height: 2rem;
 }
 
-section > button {
-  margin: 1rem;
+button {
+  margin: 0.5rem;
   border: 1px;
   border-radius: 12px;
 }
-  
-  /* Estilos para el modo oscuro (dark mode) */
-  
-  @media (prefers-color-scheme: dark) {
-  
-    .nocturno {
-      --color-bar-primario: rgba(66, 65, 77, 1);
-      --color-bar-secundario: rgba(66, 65, 77, 1);
-      --color-bar-tercera: rgba(66, 65, 77, 1);
-      --color-enfasis:  #ff7900;
-      --color-fondo: rgb(43, 42, 51);
-      --color-texto: #fff;
-      --color-boton-letra:#fff;
-  }
-  }
 
+/* Estilos para el modo oscuro (dark mode) */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bar-primario: rgba(66, 65, 77, 1);
+    --color-bar-secundario: rgba(66, 65, 77, 1);
+    --color-bar-tercero: rgba(66, 65, 77, 1);
+    --color-enfasis:  #ff7900;
+    --color-fondo: rgb(43, 42, 51);
+    --color-texto: #fff;
+    --color-boton-letra:#fff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bar-primario: #2C6BA3;
+    --color-bar-secundario: #fff;
+    --color-bar-tercero: #fff;
+    --color-enfasis:  #ff7900;
+    --color-fondo: #fff;
+    --color-texto:#000000;
+    --color-boton-letra:#000000;
+}
+}
 
 /* Tablets y phablets  2 */
 @media screen and (min-width: 576px) {
-  section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -367,10 +442,6 @@ section > button {
   aside ul {
     display: flex;
     flex-direction: column;
-  }
-  section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   footer {
@@ -429,9 +500,22 @@ section > button {
     grid-area: main;
   }
 
-  section {
+  article > section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  article .details {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  .acercaDe {
+    grid-column: 1 / 3;
+    font-family: "Courier New", Courier, monospace;
   }
 
   footer {
