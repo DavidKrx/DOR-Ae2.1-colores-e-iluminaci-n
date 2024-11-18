@@ -26,6 +26,14 @@
         </div>
         <span>POPGAMES</span>
         <div class="headerIcon">
+            <select class="form-select" id="diaNoc">
+                <option onclick="diurnoNocturno()" value="diurno">Diurno</option>
+                <option onclick="diurnoNocturno()" value="nocturno">Nocturno</option>
+              </select>
+              <select class="form-select" id="contraste">
+                <option onclick="diurnoNocturno()" value="alto">Alto</option>
+                <option onclick="diurnoNocturno()" value="bajo">Bajo</option>
+              </select>
             <a href="#">Contactenos
                 <svg fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
                     <path
@@ -85,24 +93,7 @@
     </aside>
     <!---->
     <!--Main-->
-    <main>
-        <!--Seccion-Botones-Colores-->
-        <section class="sectColores">
-            <button class="diuBut" type="button" onclick="diurno()">
-                diurno
-            </button>
-            <button class="nocBut" type="button" onclick="nocturno()">
-                nocturno
-            </button>
-            <button class="diuABut" type="button" onclick="diurnoAlto()">
-                diurno Alto
-            </button>
-            <button class="nocABut" type="button" onclick="nocturnoAlto()">
-                nocturnoAlto
-            </button>
-        </section>
-        <!---->
-        
+    <main>    
         <section>
             <!--Juego-->
             <article>
@@ -258,7 +249,7 @@
             </div>
         </div>
     </footer>
-    <script src="./script.js"></script>
+    <script src="./js/script.js"></script>
     <!---->
 </body>
 
